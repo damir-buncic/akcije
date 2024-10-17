@@ -1,0 +1,45 @@
+.container {
+  width: 200px;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid transparent;
+
+  .link {
+    position: absolute;
+    inset: 0;
+  }
+
+  .image {
+    height: 150px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .productImage {
+      max-width: 90%;
+      max-height: 90%;
+      transition: 0.3s;
+    }
+
+    .shopImage {
+      position: absolute;
+      max-height: 60px;
+      max-width: 80%;
+      opacity: 0.6;
+      transition: 0.3s;
+    }
+  }
+
+  &:hover {
+    border: 1px solid red;
+
+    .productImage {
+      transform: scale(105%);
+    }
+
+    .shopImage {
+      opacity: 0;
+    }
+  }
+}

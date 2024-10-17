@@ -1,0 +1,58 @@
+.sidebar {
+  width: 300px;
+  min-height: calc(100vh - 70px);
+  height: 100%;
+  font-size: 60px;
+  color: white;
+  padding: 16px;
+  border-right: 1px solid silver;
+  display: flex;
+  flex-direction: column;
+
+  .search {
+    position: relative;
+    
+    form {
+      display: flex;
+      color: silver;
+      position: relative;
+
+      > svg {
+        height: 18px;
+        width: 18px;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+      }
+
+      input {
+        padding: 8px;
+        border-radius: 6px;
+        width: 100%;
+        outline: none;
+        border: 1px solid silver;
+        text-indent: 20px;
+      }
+    }
+
+    .clear {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+
+      button {
+        height: 23px;
+        width: 23px;
+        border-radius: 4px;
+        outline: none;
+        border: 1px solid silver;
+        background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: silver;
+        cursor: pointer;
+      }
+    }
+  }
+}

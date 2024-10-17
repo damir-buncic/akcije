@@ -1,0 +1,32 @@
+{
+  "name": "akcije",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scraper:konzum": "ts-node ./scrapers/konzum/index.ts",
+    "scraper:kaufland": "ts-node ./scrapers/kaufland/index.ts",
+    "scraper:lidl": "ts-node ./scrapers/lidl/index.ts",
+    "scraper:spar": "ts-node ./scrapers/spar/index.ts",
+    "scraper:plodine": "ts-node ./scrapers/plodine/index.ts",
+    "scraper": "ts-node ./scrapers/index.ts",
+    "prisma:generate": "npx prisma generate",
+    "prisma:migrate": "npx prisma migrate dev",
+    "frontend": "cd frontend && npm run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.5.2",
+    "date-fns": "^2.30.0",
+    "mysql2": "^3.6.2",
+    "prisma": "^5.5.2",
+    "puppeteer": "^21.3.7",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "sharp": "^0.32.6",
+    "tesseract.js": "^5.0.2",
+    "ts-node": "^10.9.1"
+  }
+}

@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id      Int      @id @default(autoincrement())
+  title  String @db.VarChar(255)
+  subtitle  String?
+  image  String @db.VarChar(255)
+  link  String  @db.VarChar(255)
+  priceCents  Int
+  dateFrom  String?
+  dateTo  String?
+  shop  Shop
+  product  String  @db.Text
+  valid Boolean
+}
+
+model Log {
+  id      Int      @id @default(autoincrement())
+  time  Int
+  shop  Shop?
+  level  LogLevel
+  message  String
+  trace  String?  @db.Text
+}
+
+model Stats {
+  shop  Shop @id @unique
+  state  RunState
+  start  DateTime
+  productTotal Int?
+  productValid Int?
+  duration Int?
+}
+
+enum Shop {
+  Konzum
+  Spar
+  Lidl
+  Plodine
+  Kaufland
+}
+
+enum LogLevel {
+  Info
+  Error
+  Success
+}
+
+enum RunState {
+  Running
+  Success
+  Error
+}
